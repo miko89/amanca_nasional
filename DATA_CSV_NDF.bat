@@ -1,0 +1,30 @@
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-jakarta.csv -O /amanca_nasional/data/presentweather-jakarta.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-jawabarat.csv -O /amanca_nasional/data/presentweather-jawabarat.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-sumsel.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-sulsel.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-sultenggara.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-sulut.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-sumbar.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-papuabarat.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-riau.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-sulbar.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-maluku.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-malut.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-ntb.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-ntt.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-papua.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-kaltim.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-kepriau.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-lampung.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-jawatengah.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-jawatimur.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-kalbar.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-kalsel.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasionaldata/presentweather-kalteng.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-babel.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-bali.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-bengkulu.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-gorontalo.csv
+wget -q https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/CSV/kecamatanforecast-banten.csv -O /amanca_nasional/data/presentweather-jambi.csv
+
+pause

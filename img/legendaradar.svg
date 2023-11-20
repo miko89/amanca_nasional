@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 4700 420" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1.25333,0,0,1.12,-43.2997,2.84217e-13)">
+        <g transform="matrix(1,0,0,1,0,17.8571)">
+            <g transform="matrix(0.846057,0,0,0.256738,190.226,156.728)">
+                <path d="M349.102,0L63.599,0C28.474,0 0,94.017 0,209.992L0,210.008C0,325.983 28.474,420 63.599,420L349.102,420L349.102,0Z" style="fill:rgb(72,254,255);"/>
+            </g>
+            <g transform="matrix(-0.846057,0,0,0.256738,3628.88,156.728)">
+                <path d="M349.102,0L63.599,0C28.474,0 0,94.017 0,209.992L0,210.008C0,325.983 28.474,420 63.599,420L349.102,420L349.102,0Z" style="fill:rgb(182,73,252);"/>
+            </g>
+            <g transform="matrix(0.232925,0,0,0.256738,485.586,156.728)">
+                <rect x="0" y="0" width="1018.9" height="420" style="fill:rgb(74,181,254);"/>
+            </g>
+            <g transform="matrix(0.232925,0,0,0.256738,722.914,156.728)">
+                <rect x="0" y="0" width="1018.9" height="420" style="fill:rgb(73,76,251);"/>
+            </g>
+            <g transform="matrix(0.232925,0,0,0.256738,960.241,156.728)">
+                <rect x="0" y="0" width="1018.9" height="420" style="fill:rgb(70,255,67);"/>
+            </g>
+            <g transform="matrix(0.232925,0,0,0.256738,1197.57,156.728)">
+                <rect x="0" y="0" width="1018.9" height="420" style="fill:rgb(71,217,77);"/>
+            </g>
+            <g transform="matrix(0.232925,0,0,0.256738,1434.9,156.728)">
+                <rect x="0" y="0" width="1018.9" height="420" style="fill:rgb(66,183,79);"/>
+            </g>
+            <g transform="matrix(0.232925,0,0,0.256738,1672.22,156.728)">
+                <rect x="0" y="0" width="1018.9" height="420" style="fill:rgb(255,255,69);"/>
+            </g>
+            <g transform="matrix(0.232925,0,0,0.256738,1909.55,156.728)">
+                <rect x="0" y="0" width="1018.9" height="420" style="fill:rgb(253,216,73);"/>
+            </g>
+            <g transform="matrix(0.232925,0,0,0.256738,2146.88,156.728)">
+                <rect x="0" y="0" width="1018.9" height="420" style="fill:rgb(252,160,73);"/>
+            </g>
+            <g transform="matrix(0.232925,0,0,0.256738,2384.21,156.728)">
+                <rect x="0" y="0" width="1018.9" height="420" style="fill:rgb(248,74,75);"/>
+            </g>
+            <g transform="matrix(0.232925,0,0,0.256738,2621.53,156.728)">
+                <rect x="0" y="0" width="1018.9" height="420" style="fill:rgb(214,76,74);"/>
+            </g>
+            <g transform="matrix(0.232925,0,0,0.256738,2858.86,156.728)">
+                <rect x="0" y="0" width="1018.9" height="420" style="fill:rgb(178,76,73);"/>
+            </g>
+            <g transform="matrix(0.232925,0,0,0.256738,3096.19,156.728)">
+                <rect x="0" y="0" width="1018.9" height="420" style="fill:rgb(250,76,251);"/>
+            </g>
+            <g transform="matrix(1.03133,0,0,1.03333,317.364,321.372)">
+                <g transform="matrix(50,0,0,50,44.25,0)">
+                </g>
+                <text x="0px" y="0px" style="font-family:'GoodTimesRg-Regular', 'Good Times', sans-serif;font-size:50px;">5</text>
+            </g>
+            <g transform="matrix(1.03133,0,0,1.03333,581.148,321.372)">
+                <g transform="matrix(50,0,0,50,61.15,0)">
+                </g>
+                <text x="0px" y="0px" style="font-family:'GoodTimesRg-Regular', 'Good Times', sans-serif;font-size:50px;">10</text>
+            </g>
+            <g transform="matrix(1.03133,0,0,1.03333,815.017,321.372)">
+                <g transform="matrix(50,0,0,50,63.5,0)">
+                </g>
+                <text x="0px" y="0px" style="font-family:'GoodTimesRg-Regular', 'Good Times', sans-serif;font-size:50px;">15</text>
+            </g>
+            <g transform="matrix(1.03133,0,0,1.03333,1043.54,321.372)">
+                <g transform="matrix(50,0,0,50,83.15,0)">
+                </g>
+                <text x="0px" y="0px" style="font-family:'GoodTimesRg-Regular', 'Good Times', sans-serif;font-size:50px;">20</text>
+            </g>
+            <g transform="matrix(1.03133,0,0,1.03333,1279.02,321.372)">
+                <g transform="matrix(50,0,0,50,85.5,0)">
+                </g>
+                <text x="0px" y="0px" style="font-family:'GoodTimesRg-Regular', 'Good Times', sans-serif;font-size:50px;">25</text>
+            </g>
+            <g transform="matrix(1.03133,0,0,1.03333,1522.5,321.372)">
+                <g transform="matrix(50,0,0,50,83.25,0)">
+                </g>
+                <text x="0px" y="0px" style="font-family:'GoodTimesRg-Regular', 'Good Times', sans-serif;font-size:50px;">30</text>
+            </g>
+            <g transform="matrix(1.03133,0,0,1.03333,1757.97,321.372)">
+                <g transform="matrix(50,0,0,50,85.6,0)">
+                </g>
+                <text x="0px" y="0px" style="font-family:'GoodTimesRg-Regular', 'Good Times', sans-serif;font-size:50px;">35</text>
+            </g>
+            <g transform="matrix(1.03133,0,0,1.03333,1990.77,321.372)">
+                <g transform="matrix(50,0,0,50,84.15,0)">
+                </g>
+                <text x="0px" y="0px" style="font-family:'GoodTimesRg-Regular', 'Good Times', sans-serif;font-size:50px;">40</text>
+            </g>
+            <g transform="matrix(1.03133,0,0,1.03333,2228.91,321.372)">
+                <g transform="matrix(50,0,0,50,86.5,0)">
+                </g>
+                <text x="0px" y="0px" style="font-family:'GoodTimesRg-Regular', 'Good Times', sans-serif;font-size:50px;">45</text>
+            </g>
+            <g transform="matrix(1.03133,0,0,1.03333,2460.11,321.372)">
+                <g transform="matrix(50,0,0,50,86.15,0)">
+                </g>
+                <text x="0px" y="0px" style="font-family:'GoodTimesRg-Regular', 'Good Times', sans-serif;font-size:50px;">50</text>
+            </g>
+            <g transform="matrix(1.03133,0,0,1.03333,2697.29,321.372)">
+                <g transform="matrix(50,0,0,50,88.5,0)">
+                </g>
+                <text x="0px" y="0px" style="font-family:'GoodTimesRg-Regular', 'Good Times', sans-serif;font-size:50px;">55</text>
+            </g>
+            <g transform="matrix(1.03133,0,0,1.03333,2933.44,321.372)">
+                <g transform="matrix(50,0,0,50,85.5,0)">
+                </g>
+                <text x="0px" y="0px" style="font-family:'GoodTimesRg-Regular', 'Good Times', sans-serif;font-size:50px;">60</text>
+            </g>
+            <g transform="matrix(1.03133,0,0,1.03333,3181.45,321.372)">
+                <g transform="matrix(50,0,0,50,87.85,0)">
+                </g>
+                <text x="0px" y="0px" style="font-family:'GoodTimesRg-Regular', 'Good Times', sans-serif;font-size:50px;">65</text>
+            </g>
+            <g transform="matrix(1.03133,0,0,1.03333,3428.52,321.372)">
+                <g transform="matrix(50,0,0,50,79.7,0)">
+                </g>
+                <text x="0px" y="0px" style="font-family:'GoodTimesRg-Regular', 'Good Times', sans-serif;font-size:50px;">70</text>
+            </g>
+        </g>
+        <g transform="matrix(1.95802,0,0,1.96183,1524.84,112.65)">
+            <g transform="matrix(50,0,0,50,502.7,0)">
+            </g>
+            <text x="0px" y="0px" style="font-family:'HPSimplifiedHans-Regular', 'HP Simplified Hans', sans-serif;font-size:50px;">Radar Reflectivity (dBz)</text>
+        </g>
+    </g>
+</svg>
