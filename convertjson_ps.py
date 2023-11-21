@@ -37,7 +37,7 @@ def csv_to_json(csv_file_path, json_file_path):
             
             weather = {
                 "tanggal": row[1],
-                "cuaca": int(row[8]),
+                "cuaca": int(float(row[8])),
                 "suhu": row[7].strip(),
                 "rh": row[6].strip(),
                 "arah": row[9].strip(),
@@ -45,7 +45,9 @@ def csv_to_json(csv_file_path, json_file_path):
             }
             
             data[location_id]["weather"].append(weather)
-    
+            print(row[0])
+    print("ok")
+
     json_data = list(data.values())
     
     with open(json_file_path, 'w') as json_file:
@@ -83,7 +85,11 @@ def main():
         r'E:\amanca_nasional\data\presentweather-bali.csv',
         r'E:\amanca_nasional\data\presentweather-bengkulu.csv',
         r'E:\amanca_nasional\data\presentweather-gorontalo.csv',
-        r'E:\amanca_nasional\data\presentweather-jambi.csv'
+        r'E:\amanca_nasional\data\presentweather-jambi.csv',
+        r'E:\amanca_nasional\data\presentweather-sulteng.csv',
+        r'E:\amanca_nasional\data\presentweather-aceh.csv',
+        r'E:\amanca_nasional\data\presentweather-kaluta.csv',
+        r'E:\amanca_nasional\data\presentweather-bali.csv'
     ]
     location_file = r'E:\amanca_nasional\data\kecamatan_geofeatures.csv'
     output_files = [
@@ -117,6 +123,10 @@ def main():
         r'E:\amanca_nasional\data\merged_data_bengkulu_ps.csv',
         r'E:\amanca_nasional\data\merged_data_gorontalo_ps.csv',
         r'E:\amanca_nasional\data\merged_data_jambi_ps.csv',
+        r'E:\amanca_nasional\data\merged_data_sulteng_ps.csv',
+        r'E:\amanca_nasional\data\merged_data_aceh_ps.csv',
+        r'E:\amanca_nasional\data\merged_data_kaluta_ps.csv',
+        r'E:\amanca_nasional\data\merged_data_bali_ps.csv'
     ]
     json_files = [
         r'E:\amanca_nasional\data\outputbanten_ps.json',
@@ -149,6 +159,10 @@ def main():
         r'E:\amanca_nasional\data\outputbengkulu_ps.json',
         r'E:\amanca_nasional\data\outputgorontalo_ps.json',
         r'E:\amanca_nasional\data\outputjambi_ps.json',
+        r'E:\amanca_nasional\data\outputsulteng_ps.json',
+        r'E:\amanca_nasional\data\outputaceh_ps.json',
+        r'E:\amanca_nasional\data\outputkaluta_ps.json',
+        r'E:\amanca_nasional\data\outputbali_ps.json'
         
     ]
 
