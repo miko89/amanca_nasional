@@ -1460,6 +1460,9 @@ var Esri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Nat
         fetch('data/outputkaluta_ps.json', {
             cache: 'no-cache' // Tambahkan opsi cache control disini
         }).then(response => response.json()),
+        fetch('data/outputaceh_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
 
     ])
         .then(jsonDataArray => {
