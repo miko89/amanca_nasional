@@ -89,7 +89,8 @@ def main():
         r'E:\amanca_nasional\data\presentweather-sulteng.csv',
         r'E:\amanca_nasional\data\presentweather-aceh.csv',
         r'E:\amanca_nasional\data\presentweather-kaluta.csv',
-        r'E:\amanca_nasional\data\presentweather-bali.csv'
+        r'E:\amanca_nasional\data\presentweather-bali.csv',
+        r'E:\amanca_nasional\data\presentweather-jogyakarta.csv'
     ]
     location_file = r'E:\amanca_nasional\data\kecamatan_geofeatures.csv'
     output_files = [
@@ -126,7 +127,9 @@ def main():
         r'E:\amanca_nasional\data\merged_data_sulteng_ps.csv',
         r'E:\amanca_nasional\data\merged_data_aceh_ps.csv',
         r'E:\amanca_nasional\data\merged_data_kaluta_ps.csv',
-        r'E:\amanca_nasional\data\merged_data_bali_ps.csv'
+        r'E:\amanca_nasional\data\merged_data_bali_ps.csv',
+        r'E:\amanca_nasional\data\merged_data_jogyakarta_ps.csv'
+        
     ]
     json_files = [
         r'E:\amanca_nasional\data\outputbanten_ps.json',
@@ -162,7 +165,8 @@ def main():
         r'E:\amanca_nasional\data\outputsulteng_ps.json',
         r'E:\amanca_nasional\data\outputaceh_ps.json',
         r'E:\amanca_nasional\data\outputkaluta_ps.json',
-        r'E:\amanca_nasional\data\outputbali_ps.json'
+        r'E:\amanca_nasional\data\outputbali_ps.json',
+         r'E:\amanca_nasional\data\outputjogyakarta_ps.json'
         
     ]
 
