@@ -399,21 +399,9 @@
         }
 
         /* ================================================== CSS-BUTTON FORECSAT ========================================================= */
-        .btn-group {
-            position: absolute;
-            top: 0;
-            left: 10px;
-            z-index: 1000;
-            background-color: #ffffff5f;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            display: flex;
-            width: 33.3%;
-            box-sizing: border-box;
-        }
+
         .btn-group button {
-            background-color: #1a3b5c;
+            background-color: #6d5103;
             /* Green background */
             border: 2px solid rgb(228, 207, 18);
             /* Green border */
@@ -441,11 +429,11 @@
 
         /* Add a background color on hover */
         .btn-group button:hover {
-            background-color: #ae7b0d;
+            background-color: #041c41;
         }
 
         .btn-group button.active {
-            background-color: rgb(8, 92, 75)
+            background-color: rgb(72, 0, 87);
         }
 
 
@@ -1088,9 +1076,9 @@
                     <button id="sulawesi" onclick="myFunction('sulawesi')" class="button_forecast"
                         style="width:33.3%">SULAWESI</button>
                     <button id="bali" onclick="myFunction('bali')" class="button_forecast"
-                        style="width:33.3%">BALI|NTB|NTT</button>
+                        style="width:33.3%">BALI,NTB,NTT</button>
                     <button id="papua" onclick="myFunction('papua')" class="button_forecast"
-                        style="width:33.3%">MALUKU|PAPUA</button>
+                        style="width:33.3%">MALUKU,PAPUA</button>
                 </div>
                 <h5 class="text-keterangan" style="color: rgb(255, 251, 233)">Prakiraan Cuaca Harian Realtime Hari
                     ini<span id="date00"></span></h5>
@@ -1252,7 +1240,7 @@
 
     // ================================================= BASEMAP ============================================================================//
     // ==============================================center of the map=======================================================================//
-    var center = new L.latLng(-1.2, 125.7);
+    var center = new L.latLng(-0.3515, 122.48);
     var mbAttr = '<a href="https://www.openstreetmap.org/">OpenStreetMap</a>' +
         '<a href="https://creativecommons.org/licenses/by-sa/2.0/"></a>, ' +
         ' <a href="https://www.mapbox.com/"></a>',
@@ -1263,24 +1251,21 @@
         minZoom: 0,
     }).setView(center, 5)
 
-    // function myFunction(region) {
-    //     // Define the coordinates for each region
-    //     var regionCoordinates = {
-    //         'sumatera': [0, 100],
-    //         'kalimantan': [-2, 114],
-    //         'jawa': [-7.5, 112.5],
-    //         'bali': [-8.5, 115.5],
-    //         'sulawesi': [-2.5, 121.5],
-    //         'bali': [-8, 121],
-    //         'papua': [-3.5, 136]
-    //     };
+    function myFunction(region) {
+        // Define the coordinates for each region
+        var regionCoordinates = {
+            'sumatera': [0, 100],
+            'kalimantan': [-2, 114],
+            'jawa': [-7.5, 112.5],
+            'bali': [-8.5, 115.5],
+            'sulawesi': [-2.5, 121.5],
+            'bali': [-8, 121],
+            'papua': [-3.5, 136]
+        };
 
-    //     // Update the map center based on the selected region
-    //     map.setView(regionCoordinates[region], 7);
-    // }
-
-
-  
+        // Update the map center based on the selected region
+        map.setView(regionCoordinates[region], 7);
+    }
 
     // L.control.bigImage({position: 'topleft'}).addTo(map);
 
@@ -1297,7 +1282,7 @@
         'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         //attribution: 'Data © <a href="http://osm.org/copyright">OpenStreetMap</a>',
         maxZoom: 15
-    }).addTo(map);;
+    })
 
     // Peta EsriDark
     var DarkMap = L.tileLayer('https://{s}.tile.jawg.io/jawg-matrix/{z}/{x}/{y}{r}.png?access-token={accessToken}', {
@@ -1306,7 +1291,7 @@
         maxZoom: 22,
         subdomains: 'abcd',
         accessToken: 'yE3tppdmnFy7Vjp8IvLN0vmDBTfNCqT03wcSKq26fwNzV8bPGNczZO0zKCVCOh94'
-    })
+    }).addTo(map);;
 
 
     var Esri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
@@ -1335,27 +1320,24 @@
     // ==================================================================== LEGENDA ======================================================//
     //MEMBUAT LEGENDA
 
-    var legendforecast = L.control({ position: "topleft" });
-legendforecast.onAdd = function (map) {
-    var div = L.DomUtil.create('div', 'info legend');
-    div.style.width = '42px'; // Set the width of the legend
-    div.style.height = '32px'; // Set the height of the legend
+    var legendforecast = L.control({ position: "bottomleft", });
+    legendforecast.onAdd = function (map) {
 
-    var grades = [""];
-    var cuaca = [""];
-    var labels = ['img/legendabib.svg'];
+        var div = L.DomUtil.create('div', 'info legend'),
+            grades = ["<center><b>LEGENDA PRAKIRAAN CUACA</b></center>"]
+        cuaca = ["<center><b> &ensp;cerah | cerah berawan | berawan | Haze | Mist | Fog &ensp;| &ensp;Hujan Ringan | Sedang | Lebat | Petir </b></center>"]
+        labels = ['img/legendabib.svg'];
 
-    // loop through our density intervals and generate a label with a colored square for each interval
-    for (var j = 0; j < grades.length; j++) {
-        div.innerHTML +=
-            grades[j] + (" <img src=" + labels[j] + "> <br>" + cuaca[j]);
-    }
+        // loop through our density intervals and generate a label with a colored square for each interval
+        for (var j = 0; j < grades.length; j++) {
+            div.innerHTML +=
+                grades[j] + (" <img src=" + labels[j] + "> <br>" + cuaca[j]);
+        }
 
-    return div;
-};
+        return div;
+    };
 
-legendforecast.addTo(map);
-
+    legendforecast.addTo(map);
 
 
 
@@ -1394,12 +1376,9 @@ legendforecast.addTo(map);
 
     //========================================================================= DATA FORECAST 00 ======================================
 
-   // ...
-
-var map;
-var markers = [];
-var sumatera = L.layerGroup();
-var jawa = L.layerGroup();
+    var map;
+    var markers = [];
+    var markers00 = L.layerGroup();
 
     function fetchData(url) {
         return fetch(url)
@@ -1410,7 +1389,22 @@ var jawa = L.layerGroup();
     // Mengambil data dari sumber data pertama
     // const updateData = () => {
     Promise.all([
-    fetch('data/outputaceh_ps.json', {
+        fetch('data/outputbanten_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputjakarta_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputjawabarat_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputsulsel_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputsultenggara_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputsulut_ps.json', {
             cache: 'no-cache' // Tambahkan opsi cache control disini
         }).then(response => response.json()),
         fetch('data/outputsumbar_ps.json', {
@@ -1437,141 +1431,16 @@ var jawa = L.layerGroup();
         fetch('data/outputlampung_ps.json', {
             cache: 'no-cache' // Tambahkan opsi cache control disini
         }).then(response => response.json()),
-        fetch('data/outputbabel_ps.json', {
+        fetch('data/outputkalteng_ps.json', {
             cache: 'no-cache' // Tambahkan opsi cache control disini
         }).then(response => response.json()),
-
-    ])
-        .then(jsonDataArray => {
-            // Membersihkan penanda sebelumnya
-            markers.forEach(function (marker) {
-                marker.remove();
-            });
-            markers = [];
-
-            // Mendapatkan waktu saat ini
-            var currentTime = moment(d0);
-
-            // Melakukan perulangan pada data JSON
-            jsonDataArray.forEach(function (jsonData) {
-                jsonData.forEach(function (data) {
-                    // Ekstrak koordinat dan informasi cuaca
-                    var latitude = data.lintang;
-                    var longitude = data.bujur;
-                    var weather = data.weather;
-
-                    // Mencari data cuaca terdekat berdasarkan tanggal dan waktu
-                    var currentDateTime = moment(d0);
-
-                    var nearestWeather = weather.reduce(function (nearest, w) {
-                        var weatherTime = moment(w.tanggal);
-                        return (weatherTime.isAfter(nearest) && weatherTime.isSameOrBefore(currentDateTime)) ? weatherTime : nearest;
-                    }, moment(0));
-
-                    var selectedWeather = weather.find(function (w) {
-                        return moment(w.tanggal).isSame(nearestWeather);
-                    });
-
-                    var formattedDate = moment.utc(selectedWeather.tanggal).utcOffset('+07:00').format('DD - MM - YYYY  HH:mm');
-
-                    if (selectedWeather) {
-                        // Extract the weather value
-                        var cuaca = selectedWeather.cuaca;
-
-                        // Determine the color of the marker based on the weather value
-                        var markerColor;
-                        if (selectedWeather.cuaca == 0) {
-                            markerColor = 'img/CERAH.svg';
-                        } else if (selectedWeather.cuaca == 1) {
-                            markerColor = 'img/CERAHBERAWAN.svg';
-                        } else if (selectedWeather.cuaca == 2) {
-                            markerColor = 'img/CERAHBERAWAN.svg';
-                        } else if (selectedWeather.cuaca == 3) {
-                            markerColor = 'img/BERAWAN.svg';
-                        } else if (selectedWeather.cuaca == 4) {
-                            markerColor = 'img/BERAWAN.svg';
-                        } else if (selectedWeather.cuaca == 5) {
-                            markerColor = 'img/HAZE.svg';
-                        } else if (selectedWeather.cuaca == 10) {
-                            markerColor = 'img/FOG.svg';
-                        } else if (selectedWeather.cuaca == 45) {
-                            markerColor = 'img/MIST.svg';
-                        } else if (selectedWeather.cuaca == 60) {
-                            markerColor = 'img/HUJANRINGAN.svg';
-                        } else if (selectedWeather.cuaca == 61) {
-                            markerColor = 'img/HUJANSEDANG.svg';
-                        } else if (selectedWeather.cuaca == 63) {
-                            markerColor = 'img/HUJANLEBAT.svg';
-                        } else if (selectedWeather.cuaca == 80) {
-                            markerColor = 'img/HUJANRINGAN.svg';
-                        } else if (selectedWeather.cuaca == 95) {
-                            markerColor = 'img/HUJANPETIR.svg';
-                        } else {
-                            markerColor = 'img/HUJANPETIR.svg';
-                        }
-
-                        let kodeCuaca = {
-                            '0': ['Cerah', 'CERAH_1.svg'],
-                            '1': ['Cerah Berawan ', 'CERAHBERAWAN_1.svg'],
-                            '2': ['Cerah Berawan ', 'CERAHBERAWAN_1.svg'],
-                            '3': ['Berawan ', 'BERAWAN_1.svg'],
-                            '4': ['Berawan Tebal', 'BERAWAN_1.svg'],
-                            '5': ['Udara Kabur', 'HAZE_1.svg'],
-                            '10': ['Asap', 'FOG_1.svg'],
-                            '45': ['Kabut', 'MIST_1.svg'],
-                            '60': ['Hujan Ringan', 'HUJANRINGAN_1.svg'],
-                            '61': ['Hujan Sedang', 'HUJANSEDANG_1.svg'],
-                            '63': ['Hujan Lebat', 'HUJANLEBAT_1.svg'],
-                            '80': ['Hujan Lokal', 'HUJANRINGAN_1.svg'],
-                            '95': ['Hujan Petir', 'HUJANPETIR_1.svg'],
-                            '97': ['Hujan Petir', 'HUJANPETIR_1.svg'],
-                            // ... tambahkan kode cuaca lainnya seperti yang sudah Anda lakukan sebelumnya
-                        };
-
-
-                        // Create a marker with the specified icon
-                        var marker = L.marker([latitude, longitude], {
-                            icon: L.icon({
-                                iconUrl: markerColor,
-                                iconSize: [27, 43],
-                                iconAnchor: [12, 41]
-                            }),
-                            zoomAnimation: false // Menghindari perubahan ukuran marker saat zoom
-                        });
-                        marker.addTo(sumatera)
-                        // sumatera.addTo(map)
-
-                        // Create popup content with the selected weather information
-                        var popupContent = '<table style="border-collapse: collapse;">';
-                        popupContent += '<tr><td style="border: none; padding: 2px;"><span class="date">' + formattedDate.substr(0, 15) + '</span></td><td style="border: none; padding: 2px;"><span class="time">' + formattedDate.substr(15) + ' WIB</span></td></tr>';
-                        popupContent += '<tr><td colspan="2" style="padding: 5px; text-align: center;"><h5 style="margin: 0;">' + data.kecamatan + '</h5></td></tr>';
-                        popupContent += '<tr><td style="border: none; padding: 2px;"><object type="image/svg+xml" style="width:50px" data="img/' + kodeCuaca[selectedWeather.cuaca][1] + '"></object><br><span style="font-size: 13px; color: rgb(236, 253, 138);">' + kodeCuaca[selectedWeather.cuaca][0] + '</span></td>';
-                        popupContent += '<td style="border: none; padding: 5px;"><div style="text-align: center;"><p style="margin: 0;"></p><p style="margin: 0; font-size: 25px;">' + selectedWeather.suhu + '&#8451;</p><p style="margin: 0; font-size: 16px;">Humidity: ' + selectedWeather.rh + ' %</p></div></td></tr>';
-                        popupContent += '<tr><td style="border: none; padding: 2px;"><img style="width:20px;" src="' + 'img/' + selectedWeather.arah + '.svg"></td><td style="border: none; padding: 2px;">Wind Speed: ' + selectedWeather.kec + ' km/jam</td></tr>';
-                        popupContent += '</table>';
-
-                        // Bind popup to the marker
-                        marker.bindPopup(popupContent);
-
-                        // Store the marker in the markers array
-                        // markers.push(marker);
-
-                    }
-                });
-            });
-
-            // map.addLayer(markers00);
-        })
-        .catch(error => console.error(error));
-
-        Promise.all([
-        fetch('data/outputbanten_ps.json', {
+        fetch('data/outputkalbar_ps.json', {
             cache: 'no-cache' // Tambahkan opsi cache control disini
         }).then(response => response.json()),
-        fetch('data/outputjakarta_ps.json', {
+        fetch('data/outputkaltim_ps.json', {
             cache: 'no-cache' // Tambahkan opsi cache control disini
         }).then(response => response.json()),
-        fetch('data/outputjawabarat_ps.json', {
+        fetch('data/outputkalsel_ps.json', {
             cache: 'no-cache' // Tambahkan opsi cache control disini
         }).then(response => response.json()),
         fetch('data/outputjawatengah_ps.json', {
@@ -1582,7 +1451,46 @@ var jawa = L.layerGroup();
         }).then(response => response.json()),
         fetch('data/outputjogyakarta_ps.json', {
             cache: 'no-cache' // Tambahkan opsi cache control disini
-        }).then(response => response.json())
+        }).then(response => response.json()),
+        fetch('data/outputsulbar_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputgorontalo_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputsulteng_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputntb_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputntt_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputbali_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputmaluku_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputmalut_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputpapua_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputpapuabarat_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputbabel_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputkaluta_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputaceh_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
 
     ])
         .then(jsonDataArray => {
@@ -1681,8 +1589,8 @@ var jawa = L.layerGroup();
                             }),
                             zoomAnimation: false // Menghindari perubahan ukuran marker saat zoom
                         });
-                        marker.addTo(jawa)
-                        // jawa.addTo(map)
+                        marker.addTo(markers00)
+                        markers00.addTo(map)
 
                         // Create popup content with the selected weather information
                         var popupContent = '<table style="border-collapse: collapse;">';
@@ -1706,6 +1614,8 @@ var jawa = L.layerGroup();
             // map.addLayer(markers00);
         })
         .catch(error => console.error(error));
+
+
 
 
     function getAPI(url) {
@@ -1741,7 +1651,7 @@ var jawa = L.layerGroup();
     // Radar Data Jakarta
     var radarID = 'DEN';
     var token = 'd55483ba0ac25dda1596bb7115351a9570d04324123d55cf14a58b9c8cf6';
-    var urlImage = 'https://radar.bmkg.go.id:8090/sidarmaimage?' + 'token=' + token + '&radar=' + radarID + '&product=MOSAICCMAX';
+    var urlImage = 'https://radar.bmkg.go.id:8090/sidarmaimage?' + 'token=' + token + '&radar=' + radarID;
 
     // Fetch data for Radar
     var resultRadar = getAPI(urlImage);
@@ -1978,8 +1888,7 @@ var jawa = L.layerGroup();
         "Lightning": markerLayer,
         "Citra Satelit": imageSatelit,
         "CH 24 (H) IFS": imageCH,
-        // "Sumatera": markers00,
-        // "Jawa": markers01,
+        "Present Weather": markers00,
         "Batas Wilayah": batas_wilayah
     };
 
@@ -2078,55 +1987,7 @@ var jawa = L.layerGroup();
         }
     });
 
-    function myFunction(region) {
-    // Define the coordinates for each region
-    var regionCoordinates = {
-        'sumatera': [0.60, 102],
-        'kalimantan': [-2, 114],
-        'jawa': [-7.5, 112.5],
-        'bali': [-8.5, 115.5],
-        'sulawesi': [-2.5, 121.5],
-        'bali': [-8, 121],
-        'papua': [-3.5, 136]
-    };
-
-    // Update the map center based on the selected region
-    map.setView(regionCoordinates[region], 7);
-
   
-}
-
-$("#sumatera").click(function (event) {
-        event.preventDefault();
-        if (map.hasLayer(sumatera)) {
-            $(this).removeClass('selected').removeClass('active');;
-            map.removeLayer(sumatera);
-        } else {
-            map.removeLayer(jawa);
-            $(this).addClass('selected');
-            map.addLayer(sumatera);
-            $(this).addClass('selected').addClass('active').siblings().removeClass('active');;
-
-        }
-    });
-
-    //=================================================================== FORECAST 01 ========================================================//
-
-    $("#jawa").click(function (event) {
-        event.preventDefault();
-        if (map.hasLayer(jawa)) {
-            $(this).removeClass('selected').removeClass('active');;
-            map.removeLayer(jawa);
-        } else {
-            map.removeLayer(sumatera);
-            $(this).addClass('selected');
-            map.addLayer(jawa);
-            $(this).addClass('selected').addClass('active').siblings().removeClass('active');;
-        }
-    });
-
-    //=================================================================== FORECAST 02 ========================================================//
-
 </script>
 </body>
 
