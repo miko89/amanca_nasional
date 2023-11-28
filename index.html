@@ -80,7 +80,8 @@
             height: 595px;
             top: 120px;
             margin-left: 0;
-            margin-right: 0
+            margin-right: 0;
+            overflow-x: hidden
         }
 
         @media (max-width: 475px) {
@@ -307,6 +308,7 @@
             z-index: 1500;
             margin-left: 0;
             margin-right: 0;
+            overflow-x: hidden
 
 
         }
@@ -357,18 +359,20 @@
 
 
         /* ================================================== CSS-BODY CONTENT ========================================================= */
+        body {
+    margin: 0;
+    overflow-x: hidden;
+}
 
 
-        .body-content {
-            top: 400px;
-            margin-left: auto;
-            margin-right: auto;
-            width: 100%;
-            height: 1200px;
-            background: linear-gradient(to top, #04160c, #010b1a);
+.body-content {
+    top: 400px;
+    max-width: 100%;
+    height: 1200px;
+    background: linear-gradient(to top, #04160c, #010b1a);
+    overflow-x: hidden;
+}
 
-
-        }
 
         @media (max-width: 475px) {
             .body-content {
@@ -406,10 +410,8 @@
             z-index: 1000;
             background-color: #ffffff5f;
             padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
             display: flex;
-            width: 33.3%;
             box-sizing: border-box;
         }
         .btn-group button {
@@ -449,19 +451,44 @@
         }
 
 
-        @media (max-width: 475px) {
-            .btn-group button {
+        @media (max-width: 1200px) {
+    .btn-group {
+        overflow-x: auto; /* Enable horizontal scrolling */
+     
+    }
 
-                padding: 5px 15px;
-                /* Some padding */
-                cursor: pointer;
-                /* Pointer/hand icon */
-                width: 50%;
-                /* Set a width if needed */
-                display: block;
-                /* Make the buttons appear below each other */
-            }
-        }
+    .btn-group button {
+        padding: 2px 5px;
+        margin: auto;
+        cursor: pointer;
+        display: inline-block; /* Ensure buttons are displayed in a line */
+        min-width: 20%; /* Set minimum width to trigger horizontal scrolling */
+        box-sizing: border-box; /* Include padding and border in the total width */
+    }
+}
+
+@media (max-width: 475px) {
+    .btn-group {
+        overflow-x: auto; /* Enable horizontal scrolling */
+     
+    }
+
+    .btn-group button {
+        padding: 2px 5px;
+        margin: auto;
+        cursor: pointer;
+        display: inline-block; /* Ensure buttons are displayed in a line */
+        min-width: 70%; /* Set minimum width to trigger horizontal scrolling */
+        box-sizing: border-box; /* Include padding and border in the total width */
+    }
+}
+
+
+
+
+
+
+
 
         /* ================================================== CSS-TEXT ========================================================= */
 
@@ -1817,7 +1844,7 @@ var jawa = L.layerGroup();
 
     // Function to extract date and time from the radar image URL
     function extractDateTimeFromRadarImageUrl(imageUrlRadar) {
-        var dateTimeString = imageUrlRadar.match(/DEN-(\d{8})-(\d{2})(\d{2})\.png/);
+        var dateTimeString = imageUrlRadar.match(/Indonesia-(\d{8})-(\d{2})(\d{2})\.png/);
 
         if (dateTimeString && dateTimeString.length >= 4) {
             var dateString = dateTimeString[1];
