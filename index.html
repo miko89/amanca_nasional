@@ -4,7 +4,13 @@
 <head>
     <title>BMKG - AMANCA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    
  
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -101,9 +107,18 @@
             }
         }
 
+
         /* <!-- ================================================== CSS-LABEL ========================================================= -->
 <!-- ================================================== SIDEBAR ========================================================= --> */
-        table {
+/* Menyesuaikan ukuran kotak SweetAlert */
+/* .swal2-popup {
+    width: 450px; 
+    height: 180px; 
+    
+} */
+
+
+table {
             font-family: arial, sans-serif;
             border-collapse: collapse;
             width: 100%;
@@ -1073,6 +1088,11 @@
                 <img alt="SPARTAN" src="img/header_fdrs_SPARTAN10.png" height="80" width="1348" />
             </div>
         </div> -->
+
+
+
+
+
     <div id="mySidebar" class="sidebar">
         <button class="openbtn" onclick="openNav()">☰ </button>
         <!-- <img src="img/logoiws.svg" alt="" class="imgsidebar"> -->
@@ -2991,6 +3011,32 @@
         }
 
     });
+
+  
+    // document.addEventListener('DOMContentLoaded', function () {
+    //         Swal.fire({
+    //             text: 'Silahkan pilih Pulau di menu bawah untuk mengaktifkan Present Weather',
+    //         });
+    //     });
+
+        document.addEventListener('DOMContentLoaded', function () {
+    Swal.fire({
+        text: 'Silahkan pilih Pulau di menu bawah untuk mengaktifkan Present Weather',
+        customClass: {
+            popup: 'my-custom-popup-class',
+            text: 'my-custom-text-class',
+            confirmButton: 'my-custom-confirm-button-class'
+        },
+        background: '#ffffff', // Warna latar belakang
+        confirmButtonColor: ' #0b4157', // Warna tombol OK
+    });
+});
+
+
+
+
+
+
 
     //=================================================================== FORECAST 02 ========================================================//
 
