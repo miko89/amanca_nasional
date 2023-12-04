@@ -112,11 +112,22 @@
 <!-- ================================================== SIDEBAR ========================================================= --> */
 /* Menyesuaikan ukuran kotak SweetAlert */
 /* .swal2-popup {
-    width: 450px; 
+    width: 400px; 
     height: 180px; 
     
 } */
 
+/* Default style for larger devices */
+.my-custom-popup-class {
+    z-index: 1000;
+}
+
+/* Style for devices with a width less than or equal to 47px */
+@media screen and (max-width: 475px) {
+    .my-custom-popup-class {
+        z-index: 1500;
+    }
+}
 
 table {
             font-family: arial, sans-serif;
@@ -142,7 +153,7 @@ table {
             height: 540px;
             width: 250px;
             position: absolute;
-            z-index: 1500;
+            z-index: 1000;
             top: 160px;
             right: 0;
             background-color: rgb(5, 21, 28);
@@ -453,7 +464,7 @@ table {
             position: absolute;
             top: 500px;
             left: 250px;
-            z-index: 1200;
+            z-index: 800;
             background-color: #ffffff5f;
             padding: 10px;
             box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
@@ -3019,7 +3030,7 @@ table {
     //         });
     //     });
 
-        document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function () {
     Swal.fire({
         text: 'Silahkan pilih Pulau di menu bawah untuk mengaktifkan Present Weather',
         customClass: {
@@ -3029,8 +3040,12 @@ table {
         },
         background: '#ffffff', // Warna latar belakang
         confirmButtonColor: ' #0b4157', // Warna tombol OK
+        borderButtomColor: '#ffffff'
     });
+
 });
+
+
 
 
 
