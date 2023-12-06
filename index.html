@@ -1166,6 +1166,8 @@ table {
         <div class="col-sm-4 col-xs-12"></div>
         <div id="map">
             <div class="btn-group" style="width:60%">
+                <button id="sumatera" onclick="myFunction('indonesia')" class="button_forecast"
+                style="width:15%">INDONESIA</button>
                 <button id="sumatera" onclick="myFunction('sumatera')" class="button_forecast"
                     style="width:15%">SUMATERA</button>
                 <button id="kalimantan" onclick="myFunction('kalimantan')" class="button_forecast"
@@ -1507,6 +1509,7 @@ table {
 
     var map;
     var markers = [];
+    var indonesia = L.layerGroup();
     var sumatera = L.layerGroup();
     var jawa = L.layerGroup();
     var kalimantan = L.layerGroup();
@@ -1522,6 +1525,235 @@ table {
 
     // Mengambil data dari sumber data pertama
     // const updateData = () => {
+
+
+        Promise.all([
+        fetch('data/outputaceh_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputsumbar_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputsumsel_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputsumut_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputbengkulu_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputjambi_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputriau_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputkepriau_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputlampung_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputbabel_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputbanten_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputjakarta_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputjawabarat_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputjawatengah_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputjawatimur_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputjogyakarta_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputkalteng_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputkaltim_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputkaluta_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputkalsel_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputkalbar_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputsulteng_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputsulbar_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputsulsel_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputsulut_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputsultenggara_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputgorontalo_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputbali_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputntb_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputntt_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputpapua_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputpapuabarat_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputmalut_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+        fetch('data/outputmaluku_ps.json', {
+            cache: 'no-cache' // Tambahkan opsi cache control disini
+        }).then(response => response.json()),
+
+
+    ])
+        .then(jsonDataArray => {
+            // Membersihkan penanda sebelumnya
+            markers.forEach(function (marker) {
+                marker.remove();
+            });
+            markers = [];
+
+            // Mendapatkan waktu saat ini
+            var currentTime = moment(d0);
+
+            // Melakukan perulangan pada data JSON
+            jsonDataArray.forEach(function (jsonData) {
+                jsonData.forEach(function (data) {
+                    // Ekstrak koordinat dan informasi cuaca
+                    var latitude = data.lintang;
+                    var longitude = data.bujur;
+                    var weather = data.weather;
+
+                    // Mencari data cuaca terdekat berdasarkan tanggal dan waktu
+                    var currentDateTime = moment(d0);
+
+                    var nearestWeather = weather.reduce(function (nearest, w) {
+                        var weatherTime = moment(w.tanggal);
+                        return (weatherTime.isAfter(nearest) && weatherTime.isSameOrBefore(currentDateTime)) ? weatherTime : nearest;
+                    }, moment(0));
+
+                    var selectedWeather = weather.find(function (w) {
+                        return moment(w.tanggal).isSame(nearestWeather);
+                    });
+
+                    var formattedDate = moment.utc(selectedWeather.tanggal).utcOffset('+07:00').format('DD - MM - YYYY  HH:mm');
+
+                    if (selectedWeather) {
+                        // Extract the weather value
+                        var cuaca = selectedWeather.cuaca;
+
+                        // Determine the color of the marker based on the weather value
+                        var markerColor;
+                        if (selectedWeather.cuaca == 0) {
+                            markerColor = 'img/CERAH.svg';
+                        } else if (selectedWeather.cuaca == 1) {
+                            markerColor = 'img/CERAHBERAWAN.svg';
+                        } else if (selectedWeather.cuaca == 2) {
+                            markerColor = 'img/CERAHBERAWAN.svg';
+                        } else if (selectedWeather.cuaca == 3) {
+                            markerColor = 'img/BERAWAN.svg';
+                        } else if (selectedWeather.cuaca == 4) {
+                            markerColor = 'img/BERAWAN.svg';
+                        } else if (selectedWeather.cuaca == 5) {
+                            markerColor = 'img/HAZE.svg';
+                        } else if (selectedWeather.cuaca == 10) {
+                            markerColor = 'img/FOG.svg';
+                        } else if (selectedWeather.cuaca == 45) {
+                            markerColor = 'img/MIST.svg';
+                        } else if (selectedWeather.cuaca == 60) {
+                            markerColor = 'img/HUJANRINGAN.svg';
+                        } else if (selectedWeather.cuaca == 61) {
+                            markerColor = 'img/HUJANSEDANG.svg';
+                        } else if (selectedWeather.cuaca == 63) {
+                            markerColor = 'img/HUJANLEBAT.svg';
+                        } else if (selectedWeather.cuaca == 80) {
+                            markerColor = 'img/HUJANRINGAN.svg';
+                        } else if (selectedWeather.cuaca == 95) {
+                            markerColor = 'img/HUJANPETIR.svg';
+                        } else {
+                            markerColor = 'img/HUJANPETIR.svg';
+                        }
+
+                        let kodeCuaca = {
+                            '0': ['Cerah', 'CERAH_1.svg'],
+                            '1': ['Cerah Berawan ', 'CERAHBERAWAN_1.svg'],
+                            '2': ['Cerah Berawan ', 'CERAHBERAWAN_1.svg'],
+                            '3': ['Berawan ', 'BERAWAN_1.svg'],
+                            '4': ['Berawan Tebal', 'BERAWAN_1.svg'],
+                            '5': ['Udara Kabur', 'HAZE_1.svg'],
+                            '10': ['Asap', 'FOG_1.svg'],
+                            '45': ['Kabut', 'MIST_1.svg'],
+                            '60': ['Hujan Ringan', 'HUJANRINGAN_1.svg'],
+                            '61': ['Hujan Sedang', 'HUJANSEDANG_1.svg'],
+                            '63': ['Hujan Lebat', 'HUJANLEBAT_1.svg'],
+                            '80': ['Hujan Lokal', 'HUJANRINGAN_1.svg'],
+                            '95': ['Hujan Petir', 'HUJANPETIR_1.svg'],
+                            '97': ['Hujan Petir', 'HUJANPETIR_1.svg'],
+                            // ... tambahkan kode cuaca lainnya seperti yang sudah Anda lakukan sebelumnya
+                        };
+
+
+                        // Create a marker with the specified icon
+                        var marker = L.marker([latitude, longitude], {
+                            icon: L.icon({
+                                iconUrl: markerColor,
+                                iconSize: [27, 43],
+                                iconAnchor: [12, 41]
+                            }),
+                            zoomAnimation: false // Menghindari perubahan ukuran marker saat zoom
+                        });
+                        marker.addTo(sumatera)
+                        // sumatera.addTo(map)
+
+                        // Create popup content with the selected weather information
+                        var popupContent = '<table style="border-collapse: collapse;">';
+                        popupContent += '<tr><td style="border: none; padding: 2px;"><span class="date">' + formattedDate.substr(0, 15) + '</span></td><td style="border: none; padding: 2px;"><span class="time">' + formattedDate.substr(15) + ' WIB</span></td></tr>';
+                        popupContent += '<tr><td colspan="2" style="padding: 5px; text-align: center;"><h5 style="margin: 0;">' + data.kecamatan + '</h5></td></tr>';
+                        popupContent += '<tr><td style="border: none; padding: 2px;"><object type="image/svg+xml" style="width:50px" data="img/' + kodeCuaca[selectedWeather.cuaca][1] + '"></object><br><span style="font-size: 13px; color: rgb(236, 253, 138);">' + kodeCuaca[selectedWeather.cuaca][0] + '</span></td>';
+                        popupContent += '<td style="border: none; padding: 5px;"><div style="text-align: center;"><p style="margin: 0;"></p><p style="margin: 0; font-size: 25px;">' + selectedWeather.suhu + '&#8451;</p><p style="margin: 0; font-size: 16px;">Humidity: ' + selectedWeather.rh + ' %</p></div></td></tr>';
+                        popupContent += '<tr><td style="border: none; padding: 2px;"><img style="width:20px;" src="' + 'img/' + selectedWeather.arah + '.svg"></td><td style="border: none; padding: 2px;">Wind Speed: ' + selectedWeather.kec + ' km/jam</td></tr>';
+                        popupContent += '</table>';
+
+                        // Bind popup to the marker
+                        marker.bindPopup(popupContent);
+
+                        // Store the marker in the markers array
+                        // markers.push(marker);
+
+                    }
+                });
+            });
+
+            // map.addLayer(markers00);
+        })
+        .catch(error => console.error(error));
     Promise.all([
         fetch('data/outputaceh_ps.json', {
             cache: 'no-cache' // Tambahkan opsi cache control disini
@@ -2867,7 +3099,8 @@ table {
         'bali': { coordinates: [-8.57, 116.47], zoom: 9 },
         'sulawesi': { coordinates: [-2.5, 121.5], zoom: 7 },
         'jawa': { coordinates: [-7.0, 109.6], zoom: 8 }, // Assuming this is Java (Jawa)
-        'papua': { coordinates: [-2.3, 133.2], zoom: 7 }
+        'papua': { coordinates: [-2.3, 133.2], zoom: 7 },
+        'indonesia': { coordinates: [-2.5, 125.7], zoom: 5, }
     };
 
     // Get the coordinates and zoom level for the selected region
@@ -2883,12 +3116,17 @@ table {
 }
 
 
+  
+
+    //=================================================================== FORECAST 01 ========================================================//
     $("#sumatera").click(function (event) {
         event.preventDefault();
         if (map.hasLayer(sumatera)) {
             $(this).removeClass('selected').removeClass('active');;
             map.removeLayer(sumatera);
         } else {
+            map.removeLayer(indonesia);
+            $(this).addClass('selected');
             map.removeLayer(jawa);
             $(this).addClass('selected');
             map.removeLayer(kalimantan);
@@ -2904,15 +3142,15 @@ table {
 
         }
     });
-
-    //=================================================================== FORECAST 01 ========================================================//
-
+    
     $("#jawa").click(function (event) {
         event.preventDefault();
         if (map.hasLayer(jawa)) {
             $(this).removeClass('selected').removeClass('active');;
             map.removeLayer(jawa);
         } else {
+            map.removeLayer(indonesia);
+            $(this).addClass('selected');
             map.removeLayer(sumatera);
             $(this).addClass('selected');
             map.removeLayer(kalimantan);
@@ -2937,6 +3175,8 @@ table {
             map.removeLayer(kalimantan);
         }
         else {
+            map.removeLayer(indonesia);
+            $(this).addClass('selected');
             map.removeLayer(sumatera);
             $(this).addClass('selected');
             map.removeLayer(jawa);
@@ -2960,6 +3200,8 @@ table {
             map.removeLayer(sulawesi);
         }
         else {
+            map.removeLayer(indonesia);
+            $(this).addClass('selected');
             map.removeLayer(sumatera);
             $(this).addClass('selected');
             map.removeLayer(jawa);
@@ -2983,6 +3225,8 @@ table {
             map.removeLayer(bali);
         }
         else {
+            map.removeLayer(indonesia);
+            $(this).addClass('selected');
             map.removeLayer(sumatera);
             $(this).addClass('selected');
             map.removeLayer(jawa);
@@ -3007,6 +3251,8 @@ table {
             map.removeLayer(papua);
         }
         else {
+            map.removeLayer(indonesia);
+            $(this).addClass('selected');
             map.removeLayer(sumatera);
             $(this).addClass('selected');
             map.removeLayer(jawa);
@@ -3018,6 +3264,33 @@ table {
             map.removeLayer(bali);
             $(this).addClass('selected');
             map.addLayer(papua);
+            $(this).addClass('selected').addClass('active').siblings().removeClass('active');;
+        }
+
+    });
+
+
+
+    $("#indonesia").click(function (event) {
+        event.preventDefault();
+        if (map.hasLayer(indonesia)) {
+            $(this).removeClass('selected').removeClass('active');;
+            map.removeLayer(indonesia);
+        }
+        else {
+            map.removeLayer(papua);
+            $(this).addClass('selected');
+            map.removeLayer(sumatera);
+            $(this).addClass('selected');
+            map.removeLayer(jawa);
+            $(this).addClass('selected');
+            map.removeLayer(kalimantan);
+            $(this).addClass('selected');
+            map.removeLayer(sulawesi);
+            $(this).addClass('selected');
+            map.removeLayer(bali);
+            $(this).addClass('selected');
+            map.addLayer(indonesia);
             $(this).addClass('selected').addClass('active').siblings().removeClass('active');;
         }
 
