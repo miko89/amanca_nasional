@@ -1166,7 +1166,7 @@ table {
         <div class="col-sm-4 col-xs-12"></div>
         <div id="map">
             <div class="btn-group" style="width:60%">
-                <button id="sumatera" onclick="myFunction('indonesia')" class="button_forecast"
+                <button id="indonesia" onclick="myFunction('indonesia')" class="button_forecast"
                 style="width:15%">INDONESIA</button>
                 <button id="sumatera" onclick="myFunction('sumatera')" class="button_forecast"
                     style="width:15%">SUMATERA</button>
@@ -1729,7 +1729,7 @@ table {
                             }),
                             zoomAnimation: false // Menghindari perubahan ukuran marker saat zoom
                         });
-                        marker.addTo(sumatera)
+                        marker.addTo(indonesia)
                         // sumatera.addTo(map)
 
                         // Create popup content with the selected weather information
@@ -3093,14 +3093,14 @@ table {
     function myFunction(region) {
     // Define the coordinates and zoom level for each region
     var regionData = {
+        'indonesia': { coordinates: [-2.5, 125.7], zoom: 5, },
         'sumatera': { coordinates: [1.24, 100.98], zoom: 7 },
         'kalimantan': { coordinates: [-0.219, 113.7], zoom: 7 },
         'jawa': { coordinates: [-7.07, 109.5], zoom: 8 },
         'bali': { coordinates: [-8.57, 116.47], zoom: 9 },
         'sulawesi': { coordinates: [-2.5, 121.5], zoom: 7 },
         'jawa': { coordinates: [-7.0, 109.6], zoom: 8 }, // Assuming this is Java (Jawa)
-        'papua': { coordinates: [-2.3, 133.2], zoom: 7 },
-        'indonesia': { coordinates: [-2.5, 125.7], zoom: 5, }
+        'papua': { coordinates: [-2.3, 133.2], zoom: 7 }
     };
 
     // Get the coordinates and zoom level for the selected region
@@ -3119,6 +3119,32 @@ table {
   
 
     //=================================================================== FORECAST 01 ========================================================//
+    $("#indonesia").click(function (event) {
+        event.preventDefault();
+        if (map.hasLayer(indonesia)) {
+            $(this).removeClass('selected').removeClass('active');;
+            map.removeLayer(indonesia);
+        }
+        else {
+            map.removeLayer(papua);
+            $(this).addClass('selected');
+            map.removeLayer(sumatera);
+            $(this).addClass('selected');
+            map.removeLayer(jawa);
+            $(this).addClass('selected');
+            map.removeLayer(kalimantan);
+            $(this).addClass('selected');
+            map.removeLayer(sulawesi);
+            $(this).addClass('selected');
+            map.removeLayer(bali);
+            $(this).addClass('selected');
+            map.addLayer(indonesia);
+            $(this).addClass('selected').addClass('active').siblings().removeClass('active');;
+        }
+
+    });
+   
+   
     $("#sumatera").click(function (event) {
         event.preventDefault();
         if (map.hasLayer(sumatera)) {
@@ -3271,30 +3297,7 @@ table {
 
 
 
-    $("#indonesia").click(function (event) {
-        event.preventDefault();
-        if (map.hasLayer(indonesia)) {
-            $(this).removeClass('selected').removeClass('active');;
-            map.removeLayer(indonesia);
-        }
-        else {
-            map.removeLayer(papua);
-            $(this).addClass('selected');
-            map.removeLayer(sumatera);
-            $(this).addClass('selected');
-            map.removeLayer(jawa);
-            $(this).addClass('selected');
-            map.removeLayer(kalimantan);
-            $(this).addClass('selected');
-            map.removeLayer(sulawesi);
-            $(this).addClass('selected');
-            map.removeLayer(bali);
-            $(this).addClass('selected');
-            map.addLayer(indonesia);
-            $(this).addClass('selected').addClass('active').siblings().removeClass('active');;
-        }
-
-    });
+   
 
   
     // document.addEventListener('DOMContentLoaded', function () {
