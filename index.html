@@ -345,7 +345,7 @@
             z-index: 2000;
             margin-left: 0;
             margin-right: 0;
-            overflow-x: hidden
+            /* overflow-x: hidden */
         }
 
         .navbar {
@@ -362,7 +362,7 @@
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-image: url('img/background_header_0.svg');
-                overflow-x: hidden
+                /* overflow-x: hidden */
             }
 
             .navbar-logo {
@@ -381,7 +381,7 @@
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-image: url('img/background_header.svg');
-                overflow-x: hidden
+                /* overflow-x: hidden */
             }
 
             .navbar-logo {
@@ -1371,7 +1371,7 @@
 
     // ================================================= BASEMAP ============================================================================//
     // ==============================================center of the map=======================================================================//
-    var center = new L.latLng(-2.5, 125.7);
+    var center = new L.latLng(-3.254, 122.43713);
     var mbAttr = '<a href="https://www.openstreetmap.org/">OpenStreetMap</a>' +
         '<a href="https://creativecommons.org/licenses/by-sa/2.0/"></a>, ' +
         ' <a href="https://www.mapbox.com/"></a>',
@@ -1745,7 +1745,7 @@
                             var marker = L.marker([latitude, longitude], {
                                 icon: L.icon({
                                     iconUrl: markerColor,
-                                    iconSize: [27, 43],
+                                    iconSize: [32, 48],
                                     iconAnchor: [12, 41]
                                 }),
                                 zoomAnimation: false // Menghindari perubahan ukuran marker saat zoom
@@ -1755,7 +1755,7 @@
                             // Create popup content with the selected weather information
                             var popupContent = '<table style="border-collapse: collapse;">';
                             popupContent += '<tr><td style="border: none; padding: 2px;"><span class="date">' + formattedDate.substr(0, 15) + '</span></td><td style="border: none; padding: 2px;"><span class="time">' + formattedDate.substr(15) + ' WIB</span></td></tr>';
-                            popupContent += '<tr><td colspan="2" style="padding: 5px; text-align: center;"><h5 style="margin: 0;">' + data.kecamatan + '</h5></td></tr>';
+                            popupContent += '<tr><td colspan="2" style="padding: 5px; text-align: center;"><h5 style="margin: 0;">' + data.kabkot + '</h5></td></tr>';
                             popupContent += '<tr><td style="border: none; padding: 2px;"><object type="image/svg+xml" style="width:50px" data="img/' + kodeCuaca[selectedWeather.cuaca][1] + '"></object><br><span style="font-size: 13px; color: rgb(236, 253, 138);">' + kodeCuaca[selectedWeather.cuaca][0] + '</span></td>';
                             popupContent += '<td style="border: none; padding: 5px;"><div style="text-align: center;"><p style="margin: 0;"></p><p style="margin: 0; font-size: 25px;">' + selectedWeather.suhu + '&#8451;</p><p style="margin: 0; font-size: 16px;">Humidity: ' + selectedWeather.rh + ' %</p></div></td></tr>';
                             popupContent += '<tr><td style="border: none; padding: 2px;"><img style="width:20px;" src="' + 'img/' + selectedWeather.arah + '.svg"></td><td style="border: none; padding: 2px;">Wind Speed: ' + selectedWeather.kec + ' km/jam</td></tr>';
@@ -3114,7 +3114,7 @@
     function myFunction(region) {
         // Define the coordinates and zoom level for each region
         var regionData = {
-            'indonesia': { coordinates: [-2.5, 125.7], zoom: 5, },
+            'indonesia': { coordinates: [-3.254, 122.43713], zoom: 5, },
             'sumatera': { coordinates: [1.24, 100.98], zoom: 7 },
             'kalimantan': { coordinates: [-0.219, 113.7], zoom: 7 },
             'jawa': { coordinates: [-7.07, 109.5], zoom: 8 },
@@ -3182,15 +3182,25 @@ $("#indonesia").click(function (event) {
     }
 });
 
-// Function to load the selected state from localStorage
 function loadSelectedState() {
-    var selectedRegion = localStorage.getItem('selectedRegion');
-    if (!selectedRegion || selectedRegion === 'indonesia') {
-        // Add the Indonesia layer and mark the button as selected
-        map.addLayer(indonesia);
-        $("#indonesia").addClass('selected').addClass('active').siblings().removeClass('active');
+    try {
+        var selectedRegion = localStorage.getItem('selectedRegion');
+        if (!selectedRegion || selectedRegion === 'indonesia') {
+            map.addLayer(indonesia);
+            $("#indonesia").addClass('selected').addClass('active').siblings().removeClass('active');
+        }
+    } catch (e) {
+        console.error('Error loading state from local storage:', e);
+        // Lakukan penanganan kesalahan sesuai kebutuhan
     }
 }
+
+// Ganti localStorage dengan sessionStorage di seluruh kode
+var selectedRegion = sessionStorage.getItem('selectedRegion');
+// ...
+sessionStorage.setItem('selectedRegion', 'indonesia');
+
+
 
 // Trigger the loadSelectedState function when the document is ready
 $(document).ready(function () {
