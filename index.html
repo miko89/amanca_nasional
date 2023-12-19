@@ -2644,6 +2644,45 @@
         return value;
     }
 
+
+    function fetchData() {
+    fetch('https://satellite.bmkg.go.id/api22/modelrun')
+        .then(response => response.json())
+        .then(data => {
+            hima = L.tileLayer(
+                `https://satellite.bmkg.go.id/api22/tile/{z}/{x}/{y}.png?tiletype=himawari9&modelname=himawari9&param=EH&baserun=${data.himawari9[0]}`, {
+                    tms: true,
+                    opacity:0.3
+        
+                }).addTo(map);
+
+            // Fungsi untuk mengonversi UTC ke WIB
+            function convertUtcToWib(dateTimeUtc) {
+        var dateTimeWib = moment.tz(dateTimeUtc, 'UTC').tz('Asia/Jakarta').format('DD - MM - YYYY  HH:mm');
+        return dateTimeWib;
+    }
+
+// ...
+
+// Setel isi elemen dengan ID "himawaridesc" dengan waktu WIB
+document.getElementById('himawaridesc').innerHTML = convertUtcToWib(data.himawari9[0]);
+
+
+            // Include hima directly in the layer control
+            overlays["Citra Satelit"] = hima;
+            layer.addOverlay(hima, "Citra Satelit");
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+            // Handle error, e.g., display an error message
+        });
+}
+
+// Call the function when the script loads
+fetchData();
+
+
+
     // Satelit Data
     // var satelitID = 'JAK';
     // var satelit = 'H08EH';
@@ -3371,7 +3410,7 @@ $(document).ready(function () {
     });
 
 
-
+    
 
 
 
@@ -3397,41 +3436,7 @@ $(document).ready(function () {
     });
 
 
-    function fetchData() {
-    fetch('https://satellite.bmkg.go.id/api22/modelrun')
-        .then(response => response.json())
-        .then(data => {
-            hima = L.tileLayer(
-                `https://satellite.bmkg.go.id/api22/tile/{z}/{x}/{y}.png?tiletype=himawari9&modelname=himawari9&param=EH&baserun=${data.himawari9[0]}`, {
-                    tms: true,
-                    opacity:0.3
-        
-                }).addTo(map);
-
-            // Fungsi untuk mengonversi UTC ke WIB
-            function convertUtcToWib(dateTimeUtc) {
-        var dateTimeWib = moment.tz(dateTimeUtc, 'UTC').tz('Asia/Jakarta').format('DD - MM - YYYY  HH:mm');
-        return dateTimeWib;
-    }
-
-// ...
-
-// Setel isi elemen dengan ID "himawaridesc" dengan waktu WIB
-document.getElementById('himawaridesc').innerHTML = convertUtcToWib(data.himawari9[0]);
-
-
-            // Include hima directly in the layer control
-            overlays["Citra Satelit"] = hima;
-            layer.addOverlay(hima, "Citra Satelit");
-        })
-        .catch(error => {
-            console.error('Error fetching data:', error);
-            // Handle error, e.g., display an error message
-        });
-}
-
-// Call the function when the script loads
-fetchData();
+   
 
 
 
