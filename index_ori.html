@@ -70,7 +70,6 @@
 
     <!-- Leaflet VectorGrid JavaScript -->
     <script src="https://unpkg.com/leaflet.vectorgrid/dist/Leaflet.VectorGrid.js"></script>
-    
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -1148,9 +1147,8 @@
                         <img id="legend" src="img/legendasatelit.svg" width="170" height="25">
 
                         <p>Update Data Satelit
-                            <br><span id="himawaridesc" style="color: rgb(255, 180, 20); font-size: 15px;"></span>
+                            <br><span id="satelitdate" style="color: rgb(255, 180, 20); font-size: 15px;"></span>
                         </p>
-
                         <!-- <p>Prakiraan CH (24jam)
                             <br><span id="date01" style="color: rgb(255, 180, 20); font-size: 15px;"></span> 00UTC
                         </p> -->
@@ -1427,7 +1425,6 @@
         maxZoom: 22,
         subdomains: 'abcd',
         accessToken: 'yE3tppdmnFy7Vjp8IvLN0vmDBTfNCqT03wcSKq26fwNzV8bPGNczZO0zKCVCOh94'
-        
     })
 
 
@@ -2630,11 +2627,6 @@
         })
         .catch(error => console.error(error));
 
-
-
-
-     
-
     function getAPI(url) {
         var value = $.ajax({
             url: url,
@@ -2645,25 +2637,25 @@
     }
 
     // Satelit Data
-    // var satelitID = 'JAK';
-    // var satelit = 'H08EH';
-    // var tokensatelit = 'd55483ba0ac25dda1596bb7115351a9570d04324123d55cf14a58b9c8cf6';
-    // var urlImageSatelit = 'https://radar.bmkg.go.id:8090/sidarmaimage?' + 'token=' + tokensatelit + '&radar=' + satelitID + '&product=' + satelit;
+    var satelitID = 'JAK';
+    var satelit = 'H08EH';
+    var tokensatelit = 'd55483ba0ac25dda1596bb7115351a9570d04324123d55cf14a58b9c8cf6';
+    var urlImageSatelit = 'https://radar.bmkg.go.id:8090/sidarmaimage?' + 'token=' + tokensatelit + '&radar=' + satelitID + '&product=' + satelit;
 
-    // // Fetch data for Satelit
-    // var resultSatelit = getAPI(urlImageSatelit);
-    // var latestImageSatelit = resultSatelit && resultSatelit.Latest && resultSatelit.Latest.file;
-    // var latLngBoundsSatelit = resultSatelit && resultSatelit.bounds && L.latLngBounds([[-20, 94], [20, 141]]);
+    // Fetch data for Satelit
+    var resultSatelit = getAPI(urlImageSatelit);
+    var latestImageSatelit = resultSatelit && resultSatelit.Latest && resultSatelit.Latest.file;
+    var latLngBoundsSatelit = resultSatelit && resultSatelit.bounds && L.latLngBounds([[-20, 94], [20, 141]]);
 
-    // // Check if map is defined and add image overlay for Satelit
-    // if (map && latestImageSatelit && latLngBoundsSatelit) {
-    //     var imageSatelit = L.imageOverlay(latestImageSatelit, latLngBoundsSatelit, {
-    //         opacity: 0.3,
-    //         interactive: true,
-    //     }).addTo(map);
+    // Check if map is defined and add image overlay for Satelit
+    if (map && latestImageSatelit && latLngBoundsSatelit) {
+        var imageSatelit = L.imageOverlay(latestImageSatelit, latLngBoundsSatelit, {
+            opacity: 0.3,
+            interactive: true,
+        }).addTo(map);
 
-    //     console.log(latestImageSatelit);
-    // }
+        console.log(latestImageSatelit);
+    }
 
     // Radar Data Jakarta
     var radarID = 'DEN';
@@ -2702,45 +2694,45 @@
     // }
 
     // Radar Data
-    // var radarID = 'JAK';
-    // var steps = 'STEPS';
-    // var token = 'd55483ba0ac25dda1596bb7115351a9570d04324123d55cf14a58b9c8cf6';
-    // var urlImagesteps = 'https://radar.bmkg.go.id:8090/sidarmaimage?' + 'token=' + tokensatelit + '&radar=' + satelitID + '&product=' + steps;
+    var radarID = 'JAK';
+    var steps = 'STEPS';
+    var token = 'd55483ba0ac25dda1596bb7115351a9570d04324123d55cf14a58b9c8cf6';
+    var urlImagesteps = 'https://radar.bmkg.go.id:8090/sidarmaimage?' + 'token=' + tokensatelit + '&radar=' + satelitID + '&product=' + steps;
 
-    // // Fetch data for Radar
-    // var resultSteps = getAPI(urlImagesteps);
-    // var latestImageSteps = resultSteps && resultSteps.Latest && resultSteps.Latest.file;
-    // var latLngBoundsSteps = resultSteps && resultSteps.bounds && L.latLngBounds([resultSteps.bounds.overlayBRC, resultSteps.bounds.overlayTLC]);
-    // console.log(latestImageSteps);
-    // // Check if map is defined and add image overlay for Radar
-    // if (map && latestImageSteps && latLngBoundsSteps) {
-    //     var imageSteps = L.imageOverlay(latestImageSteps, latLngBoundsSteps, {
-    //         opacity: 0.8,
-    //         interactive: true,
-    //     })
-    // }
+    // Fetch data for Radar
+    var resultSteps = getAPI(urlImagesteps);
+    var latestImageSteps = resultSteps && resultSteps.Latest && resultSteps.Latest.file;
+    var latLngBoundsSteps = resultSteps && resultSteps.bounds && L.latLngBounds([resultSteps.bounds.overlayBRC, resultSteps.bounds.overlayTLC]);
+    console.log(latestImageSteps);
+    // Check if map is defined and add image overlay for Radar
+    if (map && latestImageSteps && latLngBoundsSteps) {
+        var imageSteps = L.imageOverlay(latestImageSteps, latLngBoundsSteps, {
+            opacity: 0.8,
+            interactive: true,
+        })
+    }
 
 
     // Function to extract date and time from the satellite image URL
-    // function extractDateTimeFromSatelliteImageUrl(imageUrl) {
-    //     var dateTimeString = imageUrl.match(/H08_ET_Indonesia_(\d{12})\.png/);
+    function extractDateTimeFromSatelliteImageUrl(imageUrl) {
+        var dateTimeString = imageUrl.match(/H08_ET_Indonesia_(\d{12})\.png/);
 
-    //     if (dateTimeString && dateTimeString.length >= 2) {
-    //         var dateString = dateTimeString[1];
+        if (dateTimeString && dateTimeString.length >= 2) {
+            var dateString = dateTimeString[1];
 
-    //         var year = dateString.substring(0, 4);
-    //         var month = dateString.substring(4, 6);
-    //         var day = dateString.substring(6, 8);
-    //         var hourString = dateString.substring(8, 10);
-    //         var minuteString = dateString.substring(10, 12);
+            var year = dateString.substring(0, 4);
+            var month = dateString.substring(4, 6);
+            var day = dateString.substring(6, 8);
+            var hourString = dateString.substring(8, 10);
+            var minuteString = dateString.substring(10, 12);
 
-    //         var dateTimeString = year + '-' + month + '-' + day + 'T' + hourString + ':' + minuteString;
+            var dateTimeString = year + '-' + month + '-' + day + 'T' + hourString + ':' + minuteString;
 
-    //         return dateTimeString;
-    //     }
+            return dateTimeString;
+        }
 
-    //     return null;
-    // }
+        return null;
+    }
 
     // Function to extract date and time from the radar image URL
     function extractDateTimeFromRadarImageUrl(imageUrlRadar) {
@@ -2770,14 +2762,14 @@
     }
 
     // Assuming you have the URL for the latest satellite image in the variable `latestImageSatelit`
-    // var latestImageDateTimeSatelit = extractDateTimeFromSatelliteImageUrl(latestImageSatelit);
-    // var dateTimeWibSatelit = convertUtcToWib(latestImageDateTimeSatelit);
+    var latestImageDateTimeSatelit = extractDateTimeFromSatelliteImageUrl(latestImageSatelit);
+    var dateTimeWibSatelit = convertUtcToWib(latestImageDateTimeSatelit);
 
-    // console.log(dateTimeWibSatelit);
-    // console.log(latestImageSatelit);
+    console.log(dateTimeWibSatelit);
+    console.log(latestImageSatelit);
 
-    // // Menampilkan tanggal dan waktu dalam elemen dengan ID 'satelitdate'
-    // document.getElementById('satelitdate').innerHTML = dateTimeWibSatelit;
+    // Menampilkan tanggal dan waktu dalam elemen dengan ID 'satelitdate'
+    document.getElementById('satelitdate').innerHTML = dateTimeWibSatelit;
 
 
     // Assuming you have the URL for the latest radar image in the variable `latestImageRadar`
@@ -2892,28 +2884,25 @@
 
     const markerLayer = L.layerGroup();
 
+    var baseLayers = {
+        // "Grayscale": grayscale,
+        "OSM": OSM,
+        "Dark Map": DarkMap,
+        "ESRI": Esri
+    };
 
-    var hima;  // Declare the hima variable outside the fetchData function
+    var overlays = {
 
-var baseLayers = {
-    "OSM": OSM,
-    "Dark Map": DarkMap,
-    "ESRI": Esri
-};
+        "Citra Radar": imageRadar,
+        "Lightning": markerLayer,
+        "Citra Satelit": imageSatelit,
+        "CH 24 (H) IFS": imageCH,
+        // "Sumatera": markers00,
+        // "Jawa": markers01,
+        "Batas Wilayah": batas_wilayah
+    };
 
-var overlays = {
-    "Citra Radar": imageRadar,
-    "Lightning": markerLayer,
-    "CH 24 (H) IFS": imageCH,
-    "Batas Wilayah": batas_wilayah,
-};
-
-// Declare the layer control without hima initially
-var layer = L.control.layers(baseLayers, overlays).addTo(map);
-
-
-
-
+    var layer = L.control.layers(baseLayers, overlays).addTo(map);
 
 
 
@@ -3397,41 +3386,7 @@ $(document).ready(function () {
     });
 
 
-    function fetchData() {
-    fetch('https://satellite.bmkg.go.id/api22/modelrun')
-        .then(response => response.json())
-        .then(data => {
-            hima = L.tileLayer(
-                `https://satellite.bmkg.go.id/api22/tile/{z}/{x}/{y}.png?tiletype=himawari9&modelname=himawari9&param=EH&baserun=${data.himawari9[0]}`, {
-                    tms: true,
-                    opacity:0.3
-        
-                }).addTo(map);
 
-            // Fungsi untuk mengonversi UTC ke WIB
-            function convertUtcToWib(dateTimeUtc) {
-        var dateTimeWib = moment.tz(dateTimeUtc, 'UTC').tz('Asia/Jakarta').format('DD - MM - YYYY  HH:mm');
-        return dateTimeWib;
-    }
-
-// ...
-
-// Setel isi elemen dengan ID "himawaridesc" dengan waktu WIB
-document.getElementById('himawaridesc').innerHTML = convertUtcToWib(data.himawari9[0]);
-
-
-            // Include hima directly in the layer control
-            overlays["Citra Satelit"] = hima;
-            layer.addOverlay(hima, "Citra Satelit");
-        })
-        .catch(error => {
-            console.error('Error fetching data:', error);
-            // Handle error, e.g., display an error message
-        });
-}
-
-// Call the function when the script loads
-fetchData();
 
 
 
