@@ -119,20 +119,14 @@
                     <g transform="matrix(0.133465,0,0,0.644662,31.3152,1850.05)">
                         <path d="M1187.89,170.509L1364.91,170.509C1392.73,170.509 1415.31,165.635 1415.31,159.632C1415.31,153.629 1392.73,148.755 1364.91,148.755L1187.89,148.755C1160.07,148.755 1137.49,153.629 1137.49,159.632C1137.49,165.635 1160.07,170.509 1187.89,170.509Z" style="fill:rgb(248,248,248);"/>
                     </g>
-                    <g transform="matrix(5.81847,0,0,6.19035,-369.167,-16326.5)">
-                        <g transform="matrix(12,0,0,12,106.576,2921.96)">
-                        </g>
-                        <text x="77.912px" y="2921.96px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:white;">MIST</text>
+                    <g transform="matrix(5.81847,0,0,6.19035,84.1616,1761.46)">
+                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:white;">MIST</text>
                     </g>
-                    <g transform="matrix(5.81847,0,0,6.19035,-369.167,-15977.4)">
-                        <g transform="matrix(12,0,0,12,105.243,2921.96)">
-                        </g>
-                        <text x="79.245px" y="2921.96px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:white;">FOG</text>
+                    <g transform="matrix(5.81847,0,0,6.19035,91.9177,2110.56)">
+                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:white;">FOG</text>
                     </g>
-                    <g transform="matrix(5.81847,0,0,6.19035,-369.167,-16695.8)">
-                        <g transform="matrix(12,0,0,12,108.246,2921.96)">
-                        </g>
-                        <text x="76.242px" y="2921.96px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:white;">HAZE</text>
+                    <g transform="matrix(5.81847,0,0,6.19035,74.4448,1392.16)">
+                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:white;">HAZE</text>
                     </g>
                 </g>
                 <g transform="matrix(4.35966e-17,0.796744,-1.17272,8.0357e-17,386.079,1126)">
@@ -155,51 +149,55 @@
                     <path d="M468.316,542.152L466.295,542.152L466.283,542.137L466.025,542.136C361.793,540.816 277.566,455.779 277.566,351.222C277.566,245.845 363.118,160.293 468.495,160.293C552.361,160.293 623.665,214.487 649.277,289.715L677.247,289.715C710.712,289.715 742.806,303.008 766.469,326.671C790.131,350.335 803.425,382.428 803.425,415.893L803.425,415.973C803.425,449.438 790.131,481.532 766.469,505.195C742.806,528.858 710.712,542.151 677.247,542.152L597.172,542.152L574.488,499.601L677.249,499.601C699.428,499.601 720.698,490.79 736.381,475.107C752.064,459.424 760.875,438.153 760.874,415.973L760.874,415.893C760.875,393.713 752.064,372.442 736.381,356.759C720.698,341.076 699.428,332.265 677.247,332.265L633.341,332.265C623.53,332.265 614.992,325.556 612.67,316.024C596.858,251.097 538.265,202.843 468.495,202.843C386.602,202.843 320.116,269.33 320.116,351.222C320.116,432.474 385.564,498.563 466.564,499.589L466.89,499.601L491.001,499.601L468.316,542.152Z" style="fill:white;"/>
                     <path d="M417.986,367.909L532.492,367.909L431.873,461.141L490.772,461.141L293.346,634.282L372.324,522.776L333.661,522.776L417.986,367.909Z" style="fill:rgb(255,182,0);"/>
                 </g>
-                <g transform="matrix(4.38497,0,0,4.66523,-236.934,-10855.7)">
-                    <g transform="matrix(12,0,0,12,115.349,2921.96)">
-                    </g>
-                    <text x="68.679px" y="2921.96px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:white;">RINGAN</text>
+                <g transform="matrix(4.38497,0,0,4.66523,64.2214,2775.92)">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:white;">RINGAN</text>
                 </g>
-                <g transform="matrix(5.81847,0,0,6.19035,-369.167,-15655.5)">
-                    <g transform="matrix(12,0,0,12,112.913,2921.95)">
-                    </g>
-                    <text x="71.575px" y="2921.95px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:12px;fill:white;">HUJAN</text>
+                <g transform="matrix(5.81847,0,0,6.19035,47.29,2432.39)">
+                    <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:12px;fill:white;">HUJAN</text>
                 </g>
-                <g transform="matrix(5.81847,0,0,6.19035,-369.167,-17382.6)">
-                    <g transform="matrix(12,0,0,12,113.247,2921.96)">
-                    </g>
-                    <text x="71.241px" y="2921.96px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:white;">CERAH</text>
+                <g transform="matrix(5.81847,0,0,6.19035,45.3466,705.355)">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:white;">CERAH</text>
                 </g>
-                <g transform="matrix(5.81847,0,0,6.19035,-369.167,-17728.7)">
-                    <g transform="matrix(12,0,0,12,113.247,2921.96)">
-                    </g>
-                    <text x="71.241px" y="2921.96px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:white;">CERAH</text>
+                <g transform="matrix(5.81847,0,0,6.19035,45.3466,359.255)">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:white;">CERAH</text>
                 </g>
                 <g transform="matrix(5.81847,0,0,6.19035,-369.167,-17313.8)">
-                    <g transform="matrix(9.37519,0,0,9.37519,115.597,2920.08)">
+                    <g>
+                        <g transform="matrix(1,0,0,1,68.891,2920.08)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:9.375px;fill:white;">BERA</text>
+                        </g>
+                        <g transform="matrix(1,0,0,1,94.073,2920.08)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:9.375px;fill:white;">W<tspan x="8.501px 14.754px " y="0px 0px ">AN</tspan></text>
+                        </g>
                     </g>
-                    <text x="68.891px" y="2920.08px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:9.375px;fill:white;">BERA<tspan x="94.073px 102.574px 108.827px " y="2920.08px 2920.08px 2920.08px ">WAN</tspan></text>
                 </g>
                 <g transform="matrix(5.81847,0,0,6.19035,-369.167,-16984.5)">
-                    <g transform="matrix(9.37519,0,0,9.37519,115.597,2920.08)">
+                    <g>
+                        <g transform="matrix(1,0,0,1,68.891,2920.08)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:9.375px;fill:white;">BERA</text>
+                        </g>
+                        <g transform="matrix(1,0,0,1,94.073,2920.08)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:9.375px;fill:white;">W<tspan x="8.501px 14.754px " y="0px 0px ">AN</tspan></text>
+                        </g>
                     </g>
-                    <text x="68.891px" y="2920.08px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:9.375px;fill:white;">BERA<tspan x="94.073px 102.574px 108.827px " y="2920.08px 2920.08px 2920.08px ">WAN</tspan></text>
                 </g>
-                <g transform="matrix(4.38497,0,0,4.66523,-246.359,-10468.3)">
-                    <text x="68.679px" y="2921.96px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:white;">SEDAN</text>
-                    <g transform="matrix(12,0,0,12,78.0132,2934.35)">
+                <g transform="matrix(4.38497,0,0,4.66523,54.7964,3163.32)">
+                    <g transform="matrix(12,0,0,12,50.6777,0)">
                     </g>
-                    <text x="68.679px" y="2934.35px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:white;">G</text>
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:white;">SEDANG</text>
                 </g>
                 <g transform="matrix(4.38497,0,0,4.66523,-246.359,-9988.62)">
-                    <g transform="matrix(12,0,0,12,111.881,2921.96)">
+                    <g>
+                        <g transform="matrix(1,0,0,1,74.756,2921.96)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:white;">LEBA</text>
+                        </g>
+                        <g transform="matrix(1,0,0,1,104.551,2921.96)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:white;">T</text>
+                        </g>
                     </g>
-                    <text x="74.756px" y="2921.96px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:white;">LEBA<tspan x="104.551px " y="2921.96px ">T</tspan></text>
                 </g>
-                <g transform="matrix(4.38497,0,0,4.66523,-246.359,-9555.14)">
-                    <g transform="matrix(12,0,0,12,110.988,2921.96)">
-                    </g>
-                    <text x="75.65px" y="2921.96px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:white;">PETIR</text>
+                <g transform="matrix(4.38497,0,0,4.66523,85.364,4076.48)">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:white;">PETIR</text>
                 </g>
             </g>
         </g>
